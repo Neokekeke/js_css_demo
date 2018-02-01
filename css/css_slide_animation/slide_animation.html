@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>纯CSS实现幻灯片效果</title>
+    <style>
+        <!--注：这里是用纯CSS实现的幻灯片效果，但是存在首次图片渲染的时候会出现图片闪烁的情况-->
+        /*
+        -webkit-backface-visibility:hidden; //隐藏转换的元素的背面
+        -webkit-transform-style: preserve-3d; //使被转换的元素的子元素保留其 3D 转换
+        -webkit-transform:translate3d(0,0,0); //开启GPU硬件加速模式，使用GPU代替CPU渲染动画（在安卓系统中有时会有莫名其妙的BUG，建议慎重）
+        */
+        .slide{
+            width: 1000px;
+            height: 800px;
+            margin: 0 auto;
+            -webkit-animation: mySlide 20s infinite; /*动画的名字，动画执行时间，循环的次数(infinite无限)*/
+        }
+        /*mySlide 是动画的名字*/
+        @-webkit-keyframes 'mySlide' {
+            0%{
+                background: url("img/1.jpg") center center no-repeat;
+            }
+            25%{
+                background: url("img/2.jpg") center center no-repeat;
+            }
+            50%{
+                background: url("img/3.jpg") center center no-repeat;
+            }
+            75%{
+                background: url("img/4.jpg") center center no-repeat;
+            }
+            100%{
+                background: url("img/5.jpg") center center no-repeat;
+            }
+         }
+
+    </style>
+</head>
+<body>
+
+<div class="slide">
+</div>
+
+
+
+</body>
+</html>
